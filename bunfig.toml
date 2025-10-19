@@ -1,0 +1,24 @@
+[install]
+# Enable exact mode to create more deterministic builds
+exact = true
+
+# Enable auto-trust for faster installs
+auto = true
+
+# Cache directory for faster subsequent installs
+cache = false
+
+[install.scopes]
+# Configure registries for scoped packages if needed
+
+[dev]
+# Hot reload configuration
+hot = true
+
+[test]
+# Test configuration
+preload = []
+
+[build]
+# Build optimizations
+splitting = true
