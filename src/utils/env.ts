@@ -1,8 +1,8 @@
 /**
- * Reads Vite environment variables, providing optional defaults for unset keys.
+ * Reads Next.js environment variables, providing optional defaults for unset keys.
  */
 export function getEnvVar(key: string, fallback?: string): string {
-  const value = import.meta.env[key];
+  const value = process.env[key];
 
   if (typeof value === "string" && value.length > 0) {
     return value;

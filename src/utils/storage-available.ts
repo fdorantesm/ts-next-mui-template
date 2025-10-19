@@ -1,7 +1,9 @@
-export function storageAvailable(type: 'localStorage' | 'sessionStorage'): boolean {
+export function storageAvailable(
+  type: "localStorage" | "sessionStorage"
+): boolean {
   try {
     const storage = window[type];
-    const x = '__storage_test__';
+    const x = "__storage_test__";
     storage.setItem(x, x);
     storage.removeItem(x);
     return true;
@@ -10,8 +12,11 @@ export function storageAvailable(type: 'localStorage' | 'sessionStorage'): boole
   }
 }
 
-export function localStorageGetItem(key: string, defaultValue?: any): any {
-  if (!storageAvailable('localStorage')) {
+export function localStorageGetItem<T = unknown>(
+  key: string,
+  defaultValue?: T
+): T | undefined {
+  if (!storageAvailable("localStorage")) {
     return defaultValue;
   }
 
@@ -23,8 +28,8 @@ export function localStorageGetItem(key: string, defaultValue?: any): any {
   }
 }
 
-export function localStorageSetItem(key: string, value: any): void {
-  if (!storageAvailable('localStorage')) {
+export function localStorageSetItem(key: string, value: unknown): void {
+  if (!storageAvailable("localStorage")) {
     return;
   }
 
